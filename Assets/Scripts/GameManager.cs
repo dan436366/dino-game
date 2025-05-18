@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI hiscoreText;
     [SerializeField] private TextMeshProUGUI gameOverText;
     [SerializeField] private Button retryButton;
+    [SerializeField] private Button startMenuButton;
+    
 
     private Player player;
     private Spawner spawner;
@@ -62,6 +64,7 @@ public class GameManager : MonoBehaviour
         spawner.gameObject.SetActive(true);
         gameOverText.gameObject.SetActive(false);
         retryButton.gameObject.SetActive(false);
+        startMenuButton.gameObject.SetActive(false);
 
         UpdateHiscore();
     }
@@ -75,7 +78,7 @@ public class GameManager : MonoBehaviour
         spawner.gameObject.SetActive(false);
         gameOverText.gameObject.SetActive(true);
         retryButton.gameObject.SetActive(true);
-
+        startMenuButton.gameObject.SetActive(true);
         UpdateHiscore();
     }
 
