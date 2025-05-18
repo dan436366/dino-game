@@ -261,7 +261,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      exit-icon-23_0: 1159816385727413605
+      exit-icon-23_1: -1099511211955982796
+      exit-icon-23_2: 7979504938748518287
+      exit-icon-23_3: 2555963107235186971
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

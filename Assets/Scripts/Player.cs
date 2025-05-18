@@ -27,7 +27,9 @@ public class Player : MonoBehaviour
         {
             direction = Vector3.down;
 
-            if (Input.GetButton("Jump")) {
+
+            if (IsJumpPressed())
+            {
                 direction = Vector3.up * jumpForce;
             }
         }
@@ -35,11 +37,29 @@ public class Player : MonoBehaviour
         character.Move(direction * Time.deltaTime);
     }
 
+    private bool IsJumpPressed()
+    {
+
+        if (Application.platform == RuntimePlatform.WindowsPlayer ||
+            Application.platform == RuntimePlatform.WindowsEditor)
+        {
+            return Input.GetButton("Jump");
+        }
+
+
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            return Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began;
+        }
+
+        return false;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Obstacle")) {
+        if (other.CompareTag("Obstacle"))
+        {
             GameManager.Instance.GameOver();
         }
     }
-
 }
